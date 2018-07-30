@@ -3,6 +3,11 @@ Packer is an open source tool for creating identical machine images for multiple
 
 A machine image is a single static unit that contains a pre-configured operating system and installed software which is used to quickly create new running machines. Machine image formats change for each platform. Some examples include AMIs for EC2, VMDK/VMX files for VMware, OVF exports for VirtualBox, etc.
 
+Packer works from templates. The templates are JSON files that tell Packer what kind of virtual machine you want to create, the steps to perform to install the operating system and the commands or scripts to be executed after installation.
+
+Once we have created the template, Packer allows to automatically create as many virtual machines as we need. Logically, the more virtual machines we create from a template, the more profitable the time used in the development of the template, but even if we only create the virtual machine once, the template will serve as documentation and specification of the process.
+
+
 #### Use Cases
 By now you should know what Packer does and what the benefits of image creation are. In this section, we'll enumerate some of the use cases for Packer. Note that this is not an exhaustive list by any means. There are definitely use cases for Packer not listed here. This list is just meant to give you an idea of how Packer may improve your processes.
 
