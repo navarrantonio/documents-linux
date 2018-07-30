@@ -36,3 +36,43 @@ sys-devices-platform-serial8250-tty-ttyS16.device loaded active plugged   /sys/d
 * SUB: indicates in more detail if the configuration unit is running and what its current state is.
 * DESCRIPTION: a short description of the configuration unit.
 Since we are using the sudo systemctl list-units command that shows only active units or services, the values ​​in the LOAD column will always be loaded and those in the ACTIVE column will always be active. This way of showing services is what we get by default when we run the systemctl command without any option.
+
+### Service management with systemctl
+To administer services we will use the systemctl command:
+
+#### List all active services (running) of the system
+systemctl list-units --type service
+
+#### List all active and inactive services
+systemctl list-units --type service --all
+
+#### Start, stop or restart a service
+systemctl start name.service
+systemctl stop name.service
+systemctl restart name.service
+
+#### Restart only if the service is already started
+systemctl try-restart name.service
+
+#### Reload configuration
+systemctl reload name.service
+
+#### Check the status of a service or if it is enabled (enabled)
+systemctl status name.service
+systemctl is-enabled name.service
+
+#### Check if a service is activated (running)
+systemctl is-active name.service
+
+#### Enable a service (to start when the system starts)
+systemctl enable name.service
+
+#### Disable service
+systemctl disable name.service
+
+#### Kill a service (default SIGTERM)
+systemctl kill name.service
+
+#### We can specify the signal we send to do the kill with -s.
+* For example send SIGKILL
+systemctl kill -s SIGKILL name.service
