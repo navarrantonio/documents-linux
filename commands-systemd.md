@@ -41,7 +41,8 @@ Since we are using the sudo systemctl list-units command that shows only active 
 To administer services we will use the systemctl command:
 
 #### List all active services (running) of the system
-systemctl list-units --type service
+````bash
+$ systemctl list-units --type service
 
 #### List all active and inactive services
 systemctl list-units --type service --all
@@ -76,3 +77,4 @@ systemctl kill name.service
 #### We can specify the signal we send to do the kill with -s.
 * For example send SIGKILL
 systemctl kill -s SIGKILL name.service
+````
