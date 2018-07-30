@@ -56,3 +56,6 @@ In case of not knowing the exact name of an image, we can perform a search with 
 
 $ docker search postgres
 Among the results we can see the official image (first), and the rest will be created by Docker Hub users.
+
+http://recetas-docker.readthedocs.io/es/latest/capitulo_1.html#introduccion
+http://recetas-docker.readthedocs.io/es/latest/capitulo_2.html
