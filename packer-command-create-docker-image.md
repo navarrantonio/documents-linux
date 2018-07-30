@@ -63,3 +63,4 @@ Among the results we can see the official image (first), and the rest will be cr
 
 http://recetas-docker.readthedocs.io/es/latest/capitulo_1.html#introduccion
 http://recetas-docker.readthedocs.io/es/latest/capitulo_2.html
+https://www.packer.io/docs/builders/docker.html
