@@ -17,3 +17,15 @@ The start_kernel () function then performs most of the system configuration (int
 The planner takes effective control of the management of the system, and the nucleus is asleep (inactive).
 The Init process executes scripts (Scripts) necessary to configure all services and structures that are not operating system, in order to allow the user environment to be created and presented to the user with a login screen.
 In the shutdown, Init is called to close all the functionalities of the user space in a controlled manner, again through scripts, after which the Init ends and the kernel executes the shutdown.
+
+#### The init process
+* In Linux, each process has a process
+father.
+* "Init" is the first process that creates the
+Linux kernel when the system starts (boot)
+* All processes are children of init (from
+direct or indirect way).
+* The init process can not be killed (kill),
+except when the system is turned off.
+* The init process always has the PID = 1.
+
