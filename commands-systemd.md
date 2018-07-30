@@ -86,11 +86,20 @@ systemctl kill -s SIGKILL name.service
   $ systemctl poweroff
   ````
   * To mention two interesting options
-   ````bash
-    Enmascarar
-   
-$ systemctl mask nombre.service
+  
+  ````bash
+               mask
+  $ systemctl mask nombre.service
+              Unmask
+  $ $ systemctl unmask nombre.service
+  ````
+  * When we mask a service, we not only disable it, but we also prevent it from being started manually or automatically.
+
+In another order of things, we can analyze the start time of each of the services when starting the system with systemd-analyze blame:
+````bash
+  $ systemd-analyze blame
+  ````
+  https://www.digitalocean.com/community/tutorials/systemd-essentials-working-with-services-units-and-the-journal
+
  
-    Desenmascarar
-$ systemctl unmask nombre.service
- ````
+ 
