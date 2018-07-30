@@ -44,4 +44,4 @@ systemd was launched in 2010 by Lennart Poettering, also known for developing pu
 
 systemd activates all the sockets that processes use to communicate before none is booted so that they are available for when they do so, once the sockets are initialized systemd initiates all the processes in parallel without any pre-established order or on demand when sending a message to your socket. When one process needs another one communicates through the sockets, if the recipient process is not yet available to receive the systemd message, it enqueues it so that it does not get lost and dispatches it when the destintario process is available. In this way, a total parallelism is obtained between the processes that initiate the system.
 
-
+https://danielmiessler.com/blog/the-differences-between-bsd-and-system-v-unix/
