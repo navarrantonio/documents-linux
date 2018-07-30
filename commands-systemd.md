@@ -28,3 +28,11 @@ sys-devices-platform-serial8250-tty-ttyS15.device loaded active plugged   /sys/d
 sys-devices-platform-serial8250-tty-ttyS16.device loaded active plugged   /sys/devices/platfo
 
 ````
+#### We see that we have five columns:
+
+* UNIT: the name of the service configuration unit.
+* LOAD: indicates whether the configuration unit has been loaded or not.
+* ACTIVE: indicates whether the configuration unit is active or not.
+* SUB: indicates in more detail if the configuration unit is running and what its current state is.
+* DESCRIPTION: a short description of the configuration unit.
+Since we are using the sudo systemctl list-units command that shows only active units or services, the values ​​in the LOAD column will always be loaded and those in the ACTIVE column will always be active. This way of showing services is what we get by default when we run the systemctl command without any option.
