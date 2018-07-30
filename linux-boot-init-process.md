@@ -20,9 +20,25 @@ The boot process in Linux is the process of initialization of the operating syst
 #### ¿What is a Linux daemon?
 A daemon is a program that runs in the background, waiting for certain events to occur and offering services. A good example of this is a web server that waits for a request to deliver a page or an ssh server waiting for someone trying to connect.
 
+#### ¿What are the processes in Linux?
+The processes in Linux (or in any operating system) are programs that are running and are identified by the PID. The PID (Process Identifier) is the number that is assigned to a process when it is started.
 
+#### BSD style
+The BSD init executes the initialization script in / etc / rc, similar to what was done in the original Unix of Bell Labs. There are no execution levels (runlevels), the file / etc / rc determines which programs are executed by init. The advantage of this system is that it is simple and easy to edit manually, although subject to errors. because a simple error in that script could make the system boot procedure unusable.
 
+Without this, the other initialization systems in the scripts would not exist.
 
+#### System V Style
+In GNU / Linux is the file responsible for establishing the available runlevels, so that it can be read by init. Below is an example of the start of this file, in which runlevel 5 is established, and its characteristics:
+
+/ etc / inittab: init (8) configuration
+$ Id: inittab, v 1.9 2001/05/31
+The runlevel by default
+id: 5: initdefault:
+Runlevel 0 is to stop
+Runlevel 1 is single user
+Runlevels 2-5 are multi-user
+Runlevel 6 is restart
 
 #### kernel
 is a software that is a fundamental part of the operating system, and is defined as the part that runs in privileged mode (also known as kernel mode) .It is the main responsible for providing the different programs with secure access to the hardware of the computer or in basic form, is responsible for managing resources, through system call services. Since there are many programs and access to hardware is limited, it is also responsible for deciding which program can use a hardware device and for how long, which is known as multiplexing.
