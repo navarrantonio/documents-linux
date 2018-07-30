@@ -78,3 +78,19 @@ systemctl kill name.service
 * For example send SIGKILL
 systemctl kill -s SIGKILL name.service
 ````
+* The amount of signals that we can pass to the kill option would give for an entire article.
+  We can also do a reboot, halt or shutdown of the system:
+  ````bash
+  $ systemctl reboot 
+  $ systemctl halt
+  $ systemctl poweroff
+  ````
+  * To mention two interesting options
+   ````bash
+    Enmascarar
+   
+$ systemctl mask nombre.service
+ 
+    Desenmascarar
+$ systemctl unmask nombre.service
+ ````
