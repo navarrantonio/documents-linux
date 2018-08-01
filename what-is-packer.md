@@ -25,3 +25,4 @@ Mix this in with the continuous delivery use case above, and you have a pretty s
 Since Packer creates consistent images for multiple platforms in parallel, it is perfect for creating appliances and disposable product demos. As your software changes, you can automatically create appliances with the software pre-installed. Potential users can then get started with your software by deploying it to the environment of their choice.
 
 Packaging up software with complex requirements has never been so easy. Or enjoyable, if you ask me.
+https://www.digitalocean.com/community/tutorials/how-to-create-digitalocean-snapshots-using-packer-on-ubuntu-16-04
