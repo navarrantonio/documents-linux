@@ -8,13 +8,51 @@ and sticky.
 * Bit setgid --> 2000
 * Bit setuid --> 4000
 
+#### About chmod 
+
+chmod is used to change the permissions of files or directories.
+
+In general, chmod commands take the form:
+````bash
+$ chmod options permissions file name
+````
+If no options are specified, chmod modifies the permissions of the file specified by file name to the permissions specified by permissions.
+
+permissions defines the permissions for the owner of the file (the "user"), members of the group who owns the file (the "group"), and anyone else ("others"). There are two ways to represent these permissions: with symbols (alphanumeric characters), or with octal numbers (the digits 0 through 7).
+
+Let's say you are the owner of a file named myfile, and you want to set its permissions so that:
+
+* the user can read, write, ande xecute it;
+* members of your group can read ande xecute it; and
+* others may only read it.
+
+This command will do the trick:
+
+````bash
+$ chmod u=rwx,g=rx,o=r myfile
+````
+This example uses symbolic permissions notation. The letters u, g, and o stand for "user", "group", and "other". The equals sign ("=") means "set the permissions exactly like this," and the letters "r", "w", and "x" stand for "read", "write", and "execute", respectively. The commas separate the different classes of permissions, and there are no spaces in between them.
+
+Here is the equivalent command using octal permissions notation:
+
+chmod 754 myfile
+
+Here the digits 7, 5, and 4 each individually represent the permissions for the user, group, and others, in that order. Each digit is a combination of the numbers 4, 2, 1, and 0:
+
+* 4 stands for "read",
+* 2 stands for "write",
+* 1 stands for "execute", and
+* 0 stands for "no permission."
+
+So 7 is the combination of permissions 4+2+1 (read, write, and execute), 5 is 4+0+1 (read, no write, and execute), and 4 is 4+0+0 (read, no write, and no execute).
+
 #### Bit setuid
 The setuid bit is assignable to executable files, and allows that when a user executes said file, the process acquires the permissions of the owner of the executed file. The clearest example of executable file and with the bit setuid su.
 
 it serves to execute a shell with group and user identifiers different from ours, so it must have this bit and thus allow the user to temporarily acquire administrative permissions in order to make the user change.
 
 We can see that the bit is assigned (s) by doing an ls:
-````bash````bash
+````bash
 antonio@antonio-venez:~/devel/packer/b$ ls -l /bin/su
 -rwsr-xr-x 1 root root 40128 may 16  2017 /bin/su
 antonio@antonio-venez:~/devel/packer/b$ 
@@ -32,9 +70,21 @@ Logically, it is a good idea to use this bit with extreme care as it can cause p
 #### Bit setgid
 
 It is the same as what we just explained for the setuid, but applicable to the group. If setting the previous bit we were able to establish the permissions as a EUID (Efective UID) in this case what we are going to achieve is the same, but at the level of the EGID group (Efective GID). The way to establish said permits is with 2000, in its octal representation.
-
+````bash
 $ chmod 2770 /usr/local/sbin
+````
+Instead of octal mode you can also assign the setgid permissions as follows:
+````bash
+$ chmog g+s /shared
 
+And remove it:
+$ chmog g-s /shared
+````
+SET GID is an interesting option if many users are going to access a common storage system, either
+SAMBA
+FTP
+HTTP
+Databases
 
 #### Stincky Bit
 
